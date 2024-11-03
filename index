@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coaching Institutes</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #87CEEB, #2E8B57); /* Blue to green gradient */
+            overflow: auto; /* Enable scrolling */
+            position: relative; /* Set position for absolute children */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            position: relative; /* Set relative for absolute child elements */
+            z-index: 2; /* Ensure content is above moving lines */
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for readability */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        }
+
+        .name {
+            font-size: 24px; /* Size of the name */
+            text-align: center; /* Center the name */
+            animation: blink 1.5s infinite; /* Blink animation */
+            margin-bottom: 20px; /* Space below the name */
+        }
+
+        @keyframes blink {
+            0% { color: #333; } /* Dark color */
+            20% { color: #FF69B4; } /* Pink */
+            40% { color: #00BFFF; } /* Deep Sky Blue */
+            60% { color: #32CD32; } /* Lime Green */
+            80% { color: #FFD700; } /* Gold */
+            100% { color: #FF69B4; } /* Back to Pink */
+        }
+
+        .banner {
+            width: 100%; /* Keep the width full */
+            max-height: 150px; /* Set max height for the banner */
+            object-fit: contain; /* Scale the banner to fit within the height */
+            margin-bottom: 10px;
+            opacity: 1; /* Ensure visibility */
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #4CAF50; /* Button color */
+            color: white; /* Button text color */
+            border: none;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-radius: 5px; /* Rounded button corners */
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Moving lines on the edges */
+        .moving-line {
+            position: absolute;
+            height: 6px; /* Thicker lines */
+            background: linear-gradient(270deg, #FF69B4, #00BFFF, #32CD32, #FFD700, #FF69B4);
+            background-size: 400% 100%;
+            z-index: 1; /* Behind the content */
+        }
+
+        .moving-line.top {
+            top: 0; /* Move to the top */
+            left: 0;
+            right: 0;
+            animation: moveLine 2s linear infinite; /* Continuous animation */
+        }
+
+        .moving-line.bottom {
+            bottom: 0; /* Move to the bottom */
+            left: 0;
+            right: 0;
+            animation: moveLine 2s linear infinite; /* Continuous animation */
+        }
+
+        .moving-line.left {
+            top: 0; /* Move to the left edge */
+            left: 0;
+            height: 100%; /* Full height */
+            width: 6px; /* Line width */
+            animation: moveLine 2s linear infinite; /* Continuous animation */
+        }
+
+        .moving-line.right {
+            top: 0; /* Move to the right edge */
+            right: 0;
+            height: 100%; /* Full height */
+            width: 6px; /* Line width */
+            animation: moveLine 2s linear infinite; /* Continuous animation */
+        }
+
+        @keyframes moveLine {
+            0% { transform: translateY(-100%); }
+            50% { transform: translateY(0); }
+            100% { transform: translateY(100%); }
+        }
+
+        /* Discontinuous effect */
+        @keyframes moveLineDiscontinuous {
+            0% { width: 0; }
+            10% { width: 100%; }
+            20% { width: 0; }
+            30% { width: 100%; }
+            40% { width: 0; }
+            100% { width: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="name">Deep Gogoi</div>
+
+        <!-- Banner and Button for Physics Wallah -->
+        <img src="https://graph.org/file/4c60ddc05f96c954ef48d.jpg" alt="Physics Wallah" class="banner">
+        <button class="btn" onclick="location.href='physicswallah.html'">Physics Wallah - Let's Test</button>
+
+        <!-- Banner and Button for Aakash -->
+        <img src="https://graph.org/file/509a588ab1c90e838396c.jpg" alt="Aakash" class="banner">
+        <button class="btn" onclick="location.href='aakash.html'">Aakash - Let's Test</button>
+		
+        <!-- Banner and Button for Allen -->
+        <img src="https://graph.org/file/9df99852c7eba65f50693.jpg" alt="Allen" class="banner">
+        <button class="btn" onclick="location.href='allen.html'">Allen - Let's Test</button>
+
+        <!-- Banner and Button for Newlight institute -->
+        <img src="https://graph.org/file/5890c0bce20de83b38926.jpg" alt="Newlight institute" class="banner">
+        <button class="btn" onclick="location.href='newlight.html'">Newlight institute - Let's Test</button>
+		
+	 <!-- Banner and Button for CLC -->
+        <img src="https://envs.sh/_vR.jpg" alt="CLC" class="banner">
+        <button class="btn" onclick="location.href='clc.html'">CLC - Let's Test</button>
+		
+		<!-- Banner and Button for Neetprep -->
+        <img src="https://envs.sh/_H0.jpg" alt="Neetprep" class="banner">
+        <button class="btn" onclick="location.href='neetprep.html'">Neetprep - Let's Test</button>
+    </div>	
+       
+
+    <div class="moving-line top"></div> <!-- Moving line at the top -->
+    <div class="moving-line bottom"></div> <!-- Moving line at the bottom -->
+    <div class="moving-line left"></div> <!-- Moving line on the left side -->
+    <div class="moving-line right"></div> <!-- Moving line on the right side -->
+
+</body>
+</html>
